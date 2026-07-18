@@ -8,10 +8,8 @@ import org.jspecify.annotations.NonNull;
 
 public abstract class CustomItem {
 
-    abstract protected ItemStack buildItemStack();
-
-    @NonNull
-    public abstract String getId();
+    public abstract @NonNull String getId();
+    protected abstract ItemStack buildItemStack();
 
     @NonNull
     public final ItemStack create() {

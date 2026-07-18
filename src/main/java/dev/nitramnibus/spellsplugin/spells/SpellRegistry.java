@@ -14,7 +14,7 @@ public class SpellRegistry {
     }
 
     @NonNull
-    public Spell get(@NonNull String id) {
+    public Spell getFromId(@NonNull String id) {
         return spellMap.get(id);
     }
 

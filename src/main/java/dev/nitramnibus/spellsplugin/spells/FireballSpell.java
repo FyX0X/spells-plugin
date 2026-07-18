@@ -14,6 +14,10 @@ public class FireballSpell extends ProjectileSpell {
     private static final double DAMAGE = 5.0;
     private static final float EXPLOSION_POWER = 1.f;
 
+    @Override
+    public @NonNull String getId() {
+        return "fireball";
+    }
 
     @Override
     public void cast(@NonNull Player player) {
@@ -23,10 +27,6 @@ public class FireballSpell extends ProjectileSpell {
         Bukkit.broadcastMessage(ChatColor.RED + "Casting Fireball");
     }
 
-    @Override
-    public @NonNull String getId() {
-        return "fireball";
-    }
 
     @Override
     public void onHit(ProjectileHitEvent event) {
@@ -40,8 +40,6 @@ public class FireballSpell extends ProjectileSpell {
 
         Location location = projectile.getLocation();
         projectile.getWorld().createExplosion(location, EXPLOSION_POWER, true);
-
-
     }
 
 }

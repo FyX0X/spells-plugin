@@ -5,9 +5,7 @@ import org.jspecify.annotations.NonNull;
 
 public abstract class Spell {
 
+    public abstract @NonNull String getId();
     public abstract void cast(@NonNull Player player);
-
-    @NonNull
-    public abstract String getId();
 
 }

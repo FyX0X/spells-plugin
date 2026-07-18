@@ -26,7 +26,7 @@ public class SpellHitListener implements Listener {
 
         String id = projectile.getPersistentDataContainer().get(PluginKeys.SPELL_ID, PersistentDataType.STRING);
         if  (id == null) return;
-        ProjectileSpell spell = (ProjectileSpell) spellRegistry.get(id);
+        ProjectileSpell spell = (ProjectileSpell) spellRegistry.getFromId(id);
         spell.handleHit(event);
     }
 

@@ -39,7 +39,7 @@ public class SpellCastListener implements Listener {
         if (! (itemRegistry.getFromItemStack(item) instanceof SpellCastingItem spellCastingItem)) {
             return;
         }
-        Spell spell = spellRegistry.get(spellCastingItem.getSpellId());
+        Spell spell = spellRegistry.getFromId(spellCastingItem.getSpellId());
         spell.cast(event.getPlayer());
     }
 

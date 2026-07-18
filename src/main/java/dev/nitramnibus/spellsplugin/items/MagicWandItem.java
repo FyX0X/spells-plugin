@@ -1,6 +1,5 @@
 package dev.nitramnibus.spellsplugin.items;
 
-import dev.nitramnibus.spellsplugin.keys.PluginKeys;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemRarity;
@@ -8,13 +7,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
 import org.jspecify.annotations.NonNull;
 
 import java.util.List;
 
-public class MagicWandItem extends SpellCastingItem implements Craftable{
+public class MagicWandItem extends SpellCastingItem implements Craftable {
+
+    @Override
+    public @NonNull String getId() {
+        return "magic_wand";
+    }
 
     @Override
     public ItemStack buildItemStack() {
@@ -36,8 +38,8 @@ public class MagicWandItem extends SpellCastingItem implements Craftable{
     }
 
     @Override
-    public @NonNull String getId() {
-        return "magic_wand";
+    public @NonNull String getSpellId() {
+        return "fireball";
     }
 
     @Override
@@ -47,10 +49,5 @@ public class MagicWandItem extends SpellCastingItem implements Craftable{
         recipe.setIngredient('L', Material.LAPIS_LAZULI);
         recipe.setIngredient('S', Material.STICK);
         return recipe;
-    }
-
-    @Override
-    public @NonNull String getSpellId() {
-        return "fireball";
     }
 }
