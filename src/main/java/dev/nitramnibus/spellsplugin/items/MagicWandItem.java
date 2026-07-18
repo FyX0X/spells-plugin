@@ -13,7 +13,6 @@ import org.bukkit.persistence.PersistentDataType;
 import org.jspecify.annotations.NonNull;
 
 import java.util.List;
-import java.util.logging.Level;
 
 public class MagicWandItem extends SpellCastingItem implements Craftable{
 
@@ -24,7 +23,6 @@ public class MagicWandItem extends SpellCastingItem implements Craftable{
         ItemMeta meta = magicWand.getItemMeta();
 
         if (meta == null) {
-            // TODO log here or decide to not do it logger.log(Level.SEVERE, "Could not get magicWand's ItemMeta");
             return null;
         }
 
@@ -32,10 +30,6 @@ public class MagicWandItem extends SpellCastingItem implements Craftable{
         meta.setRarity(ItemRarity.RARE);
         meta.setLore(List.of("A magic tool that lets wizards cast numerous spells."));
         meta.setEnchantmentGlintOverride(true);
-
-        PersistentDataContainer persistentDataContainer = meta.getPersistentDataContainer();
-        persistentDataContainer.set(PluginKeys.ITEM_ID, PersistentDataType.STRING, getId());
-
         magicWand.setItemMeta(meta);
 
         return magicWand;
