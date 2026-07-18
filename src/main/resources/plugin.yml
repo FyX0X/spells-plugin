@@ -6,3 +6,17 @@ main: dev.nitramnibus.spellsplugin.SpellsPlugin
 api-version: '1.21'
 
 authors: [ nitramnibus ]
+
+commands:
+  customitem:
+    description: Give yourself a custom item
+    usage: "Usage: /<command> [item_id]"
+    aliases:
+      - ci
+      - custom
+    permission: spells-plugin.custom_item
+
+permissions:
+  spells-plugin.custom_item:
+    default: op
+
