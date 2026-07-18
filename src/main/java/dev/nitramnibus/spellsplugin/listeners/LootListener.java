@@ -22,17 +22,13 @@ public class LootListener implements Listener {
 
     @EventHandler(ignoreCancelled = true)
     public void onLootGenerate(LootGenerateEvent event) {
-        Bukkit.broadcastMessage("onLootGenerate");
         if (!(event.getInventoryHolder() instanceof BlockInventoryHolder blockInventoryHolder)) {
             return;
         }
 
         // small proba to have healing stick
         if (random.nextFloat() < 0.3f) {
-            Bukkit.broadcastMessage("success");
             blockInventoryHolder.getInventory().addItem(itemRegistry.getFromId("healing_stick").create());
-        } else {
-            Bukkit.broadcastMessage("onLootGenerate: fail");
         }
     }
 
