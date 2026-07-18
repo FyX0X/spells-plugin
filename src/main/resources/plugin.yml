@@ -1,0 +1,8 @@
+name: SpellsPlugin
+description: $description
+version: '${version}'
+
+main: dev.nitramnibus.spellsplugin.SpellsPlugin
+api-version: '1.21'
+
+authors: [ nitramnibus ]
