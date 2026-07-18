@@ -5,6 +5,7 @@ import dev.nitramnibus.spellsplugin.items.HealingStickItem;
 import dev.nitramnibus.spellsplugin.items.ItemRegistry;
 import dev.nitramnibus.spellsplugin.items.MagicWandItem;
 import dev.nitramnibus.spellsplugin.keys.PluginKeys;
+import dev.nitramnibus.spellsplugin.listeners.LootListener;
 import dev.nitramnibus.spellsplugin.listeners.SpellCastListener;
 import dev.nitramnibus.spellsplugin.listeners.SpellHitListener;
 import dev.nitramnibus.spellsplugin.recipes.RecipeLoader;
@@ -45,6 +46,7 @@ public final class SpellsPlugin extends JavaPlugin {
         // 4. Register Listeners
         getServer().getPluginManager().registerEvents(new SpellCastListener(itemRegistry, spellRegistry), this);
         getServer().getPluginManager().registerEvents(new SpellHitListener(spellRegistry), this);
+        getServer().getPluginManager().registerEvents(new LootListener(itemRegistry), this);
 
         // 5. Register Commands
         getCommand("customitem").setExecutor(new CustomItemCommand(itemRegistry));
