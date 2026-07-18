@@ -7,7 +7,5 @@ public abstract class Spell {
 
     public abstract @NonNull String getId();
     public abstract void cast(@NonNull Player player);
-    public int getCooldownTicks() {
-        return 0;
-    }
+    public abstract int getCooldownTicks();
 }
