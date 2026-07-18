@@ -48,6 +48,9 @@ public class SpellCastListener implements Listener {
         spell.cast(player);
         player.setCooldown(item, spell.getCooldownTicks());
 
+        // prevent doing unexpected stuff with item (such placing it)
+        event.setCancelled(true);
+
 
     }
 
