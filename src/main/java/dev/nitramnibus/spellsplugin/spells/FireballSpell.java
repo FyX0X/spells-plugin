@@ -27,6 +27,10 @@ public class FireballSpell extends ProjectileSpell {
         Bukkit.broadcastMessage(ChatColor.RED + "Casting Fireball");
     }
 
+    @Override
+    public int getCooldownTicks() {
+        return 30;
+    }
 
     @Override
     public void onHit(ProjectileHitEvent event) {

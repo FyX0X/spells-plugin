@@ -4,6 +4,7 @@ import dev.nitramnibus.spellsplugin.items.ItemRegistry;
 import dev.nitramnibus.spellsplugin.spells.Spell;
 import dev.nitramnibus.spellsplugin.spells.SpellRegistry;
 import dev.nitramnibus.spellsplugin.spells.SpellSource;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -39,8 +40,15 @@ public class SpellCastListener implements Listener {
         if (! (itemRegistry.getFromItemStack(item) instanceof SpellSource spellSource)) {
             return;
         }
+        Player player = event.getPlayer();
+        if (player.hasCooldown(item)) {
+            return;
+        }
         Spell spell = spellRegistry.getFromId(spellSource.getSpellId());
-        spell.cast(event.getPlayer());
+        spell.cast(player);
+        player.setCooldown(item, spell.getCooldownTicks());
+
+
     }
 
 
