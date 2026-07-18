@@ -1,7 +1,5 @@
 package dev.nitramnibus.spellsplugin.listeners;
 
-import dev.nitramnibus.spellsplugin.SpellsPlugin;
-import dev.nitramnibus.spellsplugin.items.ItemRegistry;
 import dev.nitramnibus.spellsplugin.keys.PluginKeys;
 import dev.nitramnibus.spellsplugin.spells.ProjectileSpell;
 import dev.nitramnibus.spellsplugin.spells.SpellRegistry;
