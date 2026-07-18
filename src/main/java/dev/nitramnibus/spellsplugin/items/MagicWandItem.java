@@ -1,5 +1,6 @@
 package dev.nitramnibus.spellsplugin.items;
 
+import dev.nitramnibus.spellsplugin.spells.SpellSource;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemRarity;
@@ -11,7 +12,7 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.List;
 
-public class MagicWandItem extends SpellCastingItem implements Craftable {
+public class MagicWandItem extends CustomItem implements Craftable, SpellSource {
 
     @Override
     public @NonNull String getId() {

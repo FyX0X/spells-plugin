@@ -1,9 +1,9 @@
 package dev.nitramnibus.spellsplugin.listeners;
 
 import dev.nitramnibus.spellsplugin.items.ItemRegistry;
-import dev.nitramnibus.spellsplugin.items.SpellCastingItem;
 import dev.nitramnibus.spellsplugin.spells.Spell;
 import dev.nitramnibus.spellsplugin.spells.SpellRegistry;
+import dev.nitramnibus.spellsplugin.spells.SpellSource;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -36,10 +36,10 @@ public class SpellCastListener implements Listener {
             return;
         }
 
-        if (! (itemRegistry.getFromItemStack(item) instanceof SpellCastingItem spellCastingItem)) {
+        if (! (itemRegistry.getFromItemStack(item) instanceof SpellSource spellSource)) {
             return;
         }
-        Spell spell = spellRegistry.getFromId(spellCastingItem.getSpellId());
+        Spell spell = spellRegistry.getFromId(spellSource.getSpellId());
         spell.cast(event.getPlayer());
     }
 
